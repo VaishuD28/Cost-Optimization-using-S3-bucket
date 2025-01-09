@@ -63,4 +63,6 @@ chmod 777 s3upload.sh
 
 * ELK Stack is a real-time analytics platform used for log analysis, monitoring, and visualization.
 
-
+# Notes
+* Ensure you have created Jobs in your jenkins for the script to run without failure.
+* Validate the log files saved in S3 bucket.
