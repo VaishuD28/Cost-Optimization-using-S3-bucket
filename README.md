@@ -5,7 +5,23 @@ The s3upload.sh script is designed to automate the storage of Jenkins Build logs
 # Prerequisites
 To run this script, ensure the following are installed and configured:
 
-# 1. Install AWS CLI
+# 1. Install Jenkins 
+* Follow the Jenkins [installation guide](https://www.jenkins.io/doc/book/installing/linux/) or copy below code to install jenkins in your AWS EC2 VM.
+  ```
+  	sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+	  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+	  echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+	  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+	  /etc/apt/sources.list.d/jenkins.list > /dev/null
+	  sudo apt-get update
+    sudo apt-get install jenkins -y
+```
+
+# 2. Install Java jdk17
+```
+    sudo apt install openjdk-17-jre-headless -y
+```
+# 2. Install AWS CLI
 * Follow the [AWS CLI installation guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) to install the AWS Command Line Interface (CLI).
 * Verify the installation using:
   ```
@@ -20,3 +36,4 @@ aws configure
   - Provide your AWS Secret Access Key.
   - Specify your Default region (e.g., us-east-1).
   - Specify your Default output format (e.g., json).
+
