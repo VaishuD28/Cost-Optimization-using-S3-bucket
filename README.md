@@ -9,14 +9,14 @@ Provides 50% cost reduction by introducing a shell script which moves jenkins lo
 To run this script, ensure the following are installed and configured:
 
 # 1. Install Jenkins 
-* Follow the Jenkins [installation guide](https://www.jenkins.io/doc/book/installing/linux/) or copy below code to install jenkins in your AWS EC2 VM.
+* Follow the [Jenkins installation guide](https://www.jenkins.io/doc/book/installing/linux/) or copy below code to install jenkins in your AWS EC2 VM.
   ```     sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
 	  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 	  echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
 	  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
 	  /etc/apt/sources.list.d/jenkins.list > /dev/null
 	  sudo apt-get update
-          sudo apt-get install jenkins -y
+          sudo apt-get install jenkins -y 
 
 # 2. Install Java jdk17
   ```
@@ -28,7 +28,7 @@ To run this script, ensure the following are installed and configured:
   ```
    aws --version
   ```
-# 4. Connect AWS CLI to Your AWS Account
+# 4. Connect AWS CLI to your AWS Account
 * Configure the AWS CLI with your credentials:
 ```
 aws configure
@@ -53,7 +53,7 @@ chmod 777 s3upload.sh
 ## 3. Output
 * The script upon successfull execution will upload the log files to S3 bucket with jobname & build number as the filename.
 
-# Why S3 Bucket instead of ELK Stack
+# Why S3 Bucket instead of ELK Stack ??
 * S3 Glacier Deep Archive is a storage service optimized for low-cost, long-term archival.
 * Features:
 1. Optimized for extremely low-cost storage.
